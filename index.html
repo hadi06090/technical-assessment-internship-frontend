@@ -9,11 +9,86 @@
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="text-center mt-4 mb-4 p-3">
         <h1 class="text-center">Welcome to the Frontend Assessment</h1>
         <!-- TODO: Implement Task 1 here -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">MySite</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>          
         <!-- TODO: Implement Task 2 here -->
+        <div class="container mt-5">
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Card 1</h5>
+                    <p class="card-text">This is a sample card description.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         <!-- TODO: Implement Task 3 here -->
+        <div class="container mt-5 mb-5">
+            <h3>Contact Us</h3>
+            <form id="contactForm">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                <label for="name">Name</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                <label for="email">Email</label>
+              </div>
+              <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Your Message" id="message" style="height: 100px;"></textarea>
+                <label for="message">Message</label>
+              </div>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
+                Submit
+              </button>              
+            </form>
+          </div>
+          
+         <!-- Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Submitted Info</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Name:</strong> <span id="modalName"></span></p>
+          <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+          <p><strong>Message:</strong> <span id="modalMessage"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>  
+  
+  <script>
+    document.querySelector('[data-bs-toggle="modal"]').addEventListener('click', () => {
+      document.getElementById('modalName').textContent = document.getElementById('name').value;
+      document.getElementById('modalEmail').textContent = document.getElementById('email').value;
+      document.getElementById('modalMessage').textContent = document.getElementById('message').value;
+    });
+  </script>
+
     </div>
 </body>
 
